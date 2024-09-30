@@ -2,6 +2,7 @@
   become: true
   tasks:
     - name: Update all packages to their latest version
-  ansible.builtin.apt:
-    name: "*"
-    state: latest
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400
